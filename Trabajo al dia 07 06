@@ -1,0 +1,105 @@
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+
+    int tirarDado();
+    void generarTirada(int v[], int tam);
+    void mostrarTirada(int v[], int tam);
+    int SumarTirada (int v[], int tam);
+    void tiradas (int v[], int tam);
+
+
+int main(){
+
+int jugador;
+int jugador1 = 0;
+
+    cout << "------------------------------------------------------------------------------------------------------------------------";
+    cout << "                                                CIEN O ESCALERA" << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+
+    cout << "Ingrese (1) para un solo jugador                                                         Ingrese (2) para dos jugadores ";
+    cout << "" << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << "                                                   OPCION:";
+    cin >> jugador;
+    cout << "" << endl;
+    string nombre;
+    cout << "Ingrese su nombre de jugador: ";
+    cin.ignore();
+    getline(cin, nombre);
+    cout << "" << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+    if (jugador == 1){
+
+
+    srand(time(0));
+
+    const int TAM = 6;
+    int tirada[TAM];
+    cout << "Jugador: " << nombre <<endl;
+    cout << "" << endl;
+    generarTirada(tirada, TAM);
+
+    mostrarTirada(tirada, TAM);
+
+    int puntos = SumarTirada (tirada, TAM);
+    cout << "" << endl;
+    cout << "La tirada sumo: " << puntos <<endl;
+
+/*
+    int salir;
+    cout << "desea salir del juego: 0 para si, 1 para no ";
+    cin >> salir;
+
+    if (salir == 0){
+        return 0;
+    }
+*/
+    }
+
+    return 0;
+}
+
+int tirarDado(){
+    return rand()% 6 + 1;
+}
+
+void generarTirada(int v[], int tam){
+    for (int i= 0; i < tam; i++){
+        v[i] = tirarDado();
+    }
+}
+
+void mostrarTirada(int v[], int tam){
+    for (int i= 0; i < tam; i++){
+        cout << "Dado #" << i+1 << " :" << v[i] << endl;
+    }
+
+}
+
+    int SumarTirada (int v[], int tam){
+    int contador=0;
+    for (int i = 0; i < tam; i++){
+    contador += v[i];
+            }
+
+    return contador;
+    }
+
+
+    void tiradas (int v[], int tam){
+        int contador;
+        while (contador < 101){
+        for (int i= 0; i < tam; i++){
+        cout << "Dado #" << i+1 << " :" << v[i] << endl;
+        }
+        for (int i = 0; i < tam; i++){
+        contador += v[i];
+        }
+        cout << "La Puntuacion es: " << contador << endl;
+        cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+    }
+    }
