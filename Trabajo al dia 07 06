@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include<cstdlib>
 
 using namespace std;
 
@@ -31,7 +32,7 @@ int jugador1 = 0;
     cin.ignore();
     getline(cin, nombre);
     cout << "" << endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------";
     if (jugador == 1){
 
 
@@ -48,6 +49,48 @@ int jugador1 = 0;
     int puntos = SumarTirada (tirada, TAM);
     cout << "" << endl;
     cout << "La tirada sumo: " << puntos <<endl;
+    int PuntosAct = puntos;
+    cout << "Su puntuacion actual es: " << PuntosAct << endl;
+
+    cout << "------------------------------------------------------------------------------------------------------------------------";
+    std::cout <<"Presione enter para la proxima tirada" <<endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------";
+    std::cin.get();
+
+    srand(time(0));
+
+    tirada[TAM];
+    cout << "Jugador: " << nombre <<endl;
+    cout << "" << endl;
+    generarTirada(tirada, TAM);
+
+    mostrarTirada(tirada, TAM);
+
+    puntos = SumarTirada (tirada, TAM);
+    cout << "" << endl;
+    cout << "La tirada sumo: " << puntos <<endl;
+    PuntosAct = PuntosAct + puntos;
+    cout << "Su puntuacion actual es: " << PuntosAct << endl;
+
+    cout << "------------------------------------------------------------------------------------------------------------------------";
+    std::cout <<"Presione enter para la proxima tirada" <<endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+    std::cin.get();
+
+    srand(time(0));
+
+    tirada[TAM];
+    cout << "Jugador: " << nombre <<endl;
+    cout << "" << endl;
+    generarTirada(tirada, TAM);
+
+    mostrarTirada(tirada, TAM);
+
+    puntos = SumarTirada (tirada, TAM);
+    cout << "" << endl;
+    cout << "La tirada sumo: " << puntos <<endl;
+    PuntosAct = PuntosAct + puntos;
+    cout << "Su puntuacion actual es: " << PuntosAct << endl;
 
 /*
     int salir;
@@ -100,6 +143,5 @@ void mostrarTirada(int v[], int tam){
         contador += v[i];
         }
         cout << "La Puntuacion es: " << contador << endl;
-        cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
     }
     }
