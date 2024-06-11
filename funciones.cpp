@@ -3,33 +3,48 @@
 
 using namespace std;
 
-int tirarDado(){
+
+void PressEnter()
+{
+    cout << "------------------------------------------------------------------------------------------------------------------------";
+    std::cout <<"Presione enter para la proxima tirada" <<endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------";
+    std::cin.get();
+}
+int tirarDado()
+{
     return rand()% 6 + 1;
 }
 
-void generarTirada(int v[], int tam){
-    for (int i= 0; i < tam; i++){
+void generarTirada(int v[], int tam)
+{
+    for (int i= 0; i < tam; i++)
+    {
         v[i] = tirarDado();
     }
 }
 
-void mostrarTirada(int v[], int tam){
-    for (int i= 0; i < tam; i++){
+void mostrarTirada(int v[], int tam)
+{
+    for (int i= 0; i < tam; i++)
+    {
         cout << "Dado #" << i+1 << " :" << v[i] << endl;
     }
 
 }
 
-    int SumarTirada (int v[], int tam){
+int SumarTirada (int v[], int tam)
+{
     int contador=0;
-    for (int i = 0; i < tam; i++){
-    contador += v[i];
-            }
-
-    return contador;
+    for (int i = 0; i < tam; i++)
+    {
+        contador += v[i];
     }
 
-    bool compararVectoresEnMismaPosicion(int vec1[], int vec2[], int tam)
+    return contador;
+}
+
+bool compararVectoresEnMismaPosicion(int vec1[], int vec2[], int tam)
 {
     for(int i = 0; i < tam; i++)
     {
