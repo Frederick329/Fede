@@ -2,6 +2,7 @@
 #define FUNCIONES_H_INCLUDED
 
 int tirarDado();
+void PressEnter();
 void generarTirada(int v[], int tam);
 void mostrarTirada(int v[], int tam);
 int SumarTirada (int v[], int tam);
