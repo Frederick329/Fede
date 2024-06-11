@@ -7,8 +7,7 @@ using namespace std;
 
 int main(){
 
-int jugador;
-
+    int jugador;
     cout << "------------------------------------------------------------------------------------------------------------------------";
     cout << "                                                CIEN O ESCALERA" << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
@@ -25,71 +24,46 @@ int jugador;
     getline(cin, nombre);
     cout << "" << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------";
-    cout << "Comienza la 1ra Ronda" <<endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------";
+    cout << "                                               Comienza la 1ra Ronda" <<endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
 
-    if (jugador == 1){
 
     const int TAM = 6;
     int tirada[TAM];
+
+    ///1er tirada
     cout << "Jugador: " << nombre <<endl;
     cout << "" << endl;
     generarTirada(tirada, TAM);
-
     mostrarTirada(tirada, TAM);
-
     int puntos = SumarTirada (tirada, TAM);
-    cout << "" << endl;
-    cout << "La tirada sumo: " << puntos <<endl;
     int PuntosAct = puntos;
+    cout << "La tirada sumo: " << puntos <<endl;
     cout << "Su puntuacion actual es: " << PuntosAct << endl;
+    PressEnter();
 
-    cout << "------------------------------------------------------------------------------------------------------------------------";
-    std::cout <<"Presione enter para la proxima tirada" <<endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------";
-    std::cin.get();
-
-    tirada[TAM];
+    ///2da tirada
     cout << "Jugador: " << nombre <<endl;
     cout << "" << endl;
     generarTirada(tirada, TAM);
-
     mostrarTirada(tirada, TAM);
-
     puntos = SumarTirada (tirada, TAM);
-    cout << "" << endl;
-    cout << "La tirada sumo: " << puntos <<endl;
     PuntosAct = PuntosAct + puntos;
+    cout << "La tirada sumo: " << puntos <<endl;
     cout << "Su puntuacion actual es: " << PuntosAct << endl;
+    PressEnter();
 
-    cout << "------------------------------------------------------------------------------------------------------------------------";
-    std::cout <<"Presione enter para la proxima tirada" <<endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
-    std::cin.get();
-
-    tirada[TAM];
+    ///3ra tirada
     cout << "Jugador: " << nombre <<endl;
     cout << "" << endl;
     generarTirada(tirada, TAM);
-
     mostrarTirada(tirada, TAM);
-
     puntos = SumarTirada (tirada, TAM);
-    cout << "" << endl;
-    cout << "La tirada sumo: " << puntos <<endl;
     PuntosAct = PuntosAct + puntos;
+    cout << "La tirada sumo: " << puntos <<endl;
     cout << "Su puntuacion actual es: " << PuntosAct << endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------";
-    cout <<                                                      "Fin de la Ronda" <<endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
-
-
-
-
-
-
-
-    }
+    PressEnter();
 
     return 0;
 }
+
