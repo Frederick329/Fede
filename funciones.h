@@ -1,8 +1,7 @@
-#ifndef FUNCIONES_H_INCLUDED
-#define FUNCIONES_H_INCLUDED
+#ifndef FUNCION_H_INCLUDED
+#define FUNCION_H_INCLUDED
 
 int tirarDado();
-void PressEnter();
 void generarTirada(int v[], int tam);
 void mostrarTirada(int v[], int tam);
 int SumarTirada (int v[], int tam);
@@ -12,4 +11,7 @@ void ordenarVector(int vec[], int tam);
 int contarNumerosRepetidos(int vec[], int tam, int num);
 bool verificarTodosRepetidos(int vec[], int tam);
 
-#endif // FUNCIONES_H_INCLUDED
+/// Diseño
+void PressEnter();
+
+#endif // FUNCION_H_INCLUDED
