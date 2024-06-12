@@ -9,6 +9,7 @@ int main(){
     int jugador;
     const int TAM = 6;
     int tirada[TAM];
+    int ronda = 1;
     cout << "------------------------------------------------------------------------------------------------------------------------";
     cout << "                                                CIEN O ESCALERA" << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
@@ -25,41 +26,23 @@ int main(){
     getline(cin, nombre);
     cout << " " <<endl;
     cout << "------------------------------------------------------------------------------------------------------------------------";
-    cout << "                                               Comienza la 1ra Ronda" <<endl;
+    cout << "                                               COMIENZA LA RONDA #" << ronda <<endl;
     cout << "------------------------------------------------------------------------------------------------------------------------";
-    ///1ra tirada
     int PuntosAct = 0;
-    cout << "TURNO DE " << nombre << "  | RONDA # 1  " << "| PUNTAJE TOTAL: " << PuntosAct << endl;
+    for (int i = 1; i <=3; i++){
+    cout << "TURNO DE " << nombre << "  | RONDA #" << ronda << "| PUNTAJE TOTAL: " << PuntosAct << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------";
     generarTirada(tirada, TAM);
     mostrarTirada(tirada, TAM);
     int puntos = SumarTirada (tirada, TAM);
-    PuntosAct = PuntosAct + puntos;
+    PuntosAct = PuntosAct += puntos;
     cout << "La tirada sumo: " << puntos <<endl;
     PressEnter();
+    }
 
-    ///2da tirada
-    cout << "TURNO DE " << nombre << "  | RONDA # 1  " << "| PUNTAJE TOTAL: " << PuntosAct << endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------";
-    generarTirada(tirada, TAM);
-    mostrarTirada(tirada, TAM);
-    puntos = SumarTirada (tirada, TAM);
-    PuntosAct = PuntosAct + puntos;
-    cout << "La tirada sumo: " << puntos <<endl;
-    PressEnter();
-
-    ///3ra tirada
-    cout << "TURNO DE " << nombre << "  | RONDA # 1  " << "| PUNTAJE TOTAL: " << PuntosAct << endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------";
-    generarTirada(tirada, TAM);
-    mostrarTirada(tirada, TAM);
-    puntos = SumarTirada (tirada, TAM);
-    PuntosAct = PuntosAct + puntos;
-    cout << "La tirada sumo: " << puntos <<endl;
-    PressEnter();
     cout << " " <<endl;
     cout << " " <<endl;
-    cout << "                                           LA PUNTUACION DE LA RONDA #1 es: " << PuntosAct << endl;
+    cout << "                                           LA PUNTUACION DE LA RONDA # " << ronda << " es: " << PuntosAct<< endl;
     cout << " " <<endl;
     cout << " " <<endl;
     cout << "------------------------------------------------------------------------------------------------------------------------";
