@@ -33,13 +33,13 @@ int main(){
 
     while (PuntosAct < 100){
     for (int i = 1; i <=3; i++){
-    cout << "TURNO DE " << nombre << "  | RONDA #" << ronda << "| PUNTAJE TOTAL: " << PuntosAct << endl;
+    cout << "TURNO DE " << nombre << "     |    RONDA #" << ronda << "    |     PUNTAJE TOTAL: " << PuntosAct << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------";
     generarTirada(tirada, TAM);
     mostrarTirada(tirada, TAM);
     int puntos = SumarTirada (tirada, TAM);
     PuntosAct = PuntosAct += puntos;
-    cout << "La tirada sumo: " << puntos <<endl;
+    cout << "LA TIRDADA SUMO: " << puntos << " PUNTOS" <<endl;
     PressEnter();
     }
 
@@ -61,5 +61,6 @@ int main(){
     return 0;
 
     }
+
 
 
