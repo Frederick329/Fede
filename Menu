@@ -6,64 +6,65 @@
 using namespace std;
 
 int main(){
-
     int jugador;
+    const int TAM = 6;
+    int tirada[TAM];
     cout << "------------------------------------------------------------------------------------------------------------------------";
     cout << "                                                CIEN O ESCALERA" << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
 
-    cout << "Ingrese (1) para un solo jugador                                                         Ingrese (2) para dos jugadores ";
-    cout << "" << endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
-    cout << "                                                   OPCION:";
+    cout << "Ingrese (1) para un solo jugador                                                         Ingrese (2) para dos jugadores " << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------";
+    cout << "                                                   OPCION: ";
     cin >> jugador;
-    cout << "" << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+    if (jugador == 1){
     string nombre;
     cout << "Ingrese su nombre de jugador: ";
     cin.ignore();
     getline(cin, nombre);
-    cout << "" << endl;
+    cout << " " <<endl;
     cout << "------------------------------------------------------------------------------------------------------------------------";
     cout << "                                               Comienza la 1ra Ronda" <<endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
-
-
-    const int TAM = 6;
-    int tirada[TAM];
-
-    ///1er tirada
-    cout << "Jugador: " << nombre <<endl;
-    cout << "" << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------";
+    ///1ra tirada
+    int PuntosAct = 0;
+    cout << "TURNO DE " << nombre << "  | RONDA # 1  " << "| PUNTAJE TOTAL: " << PuntosAct << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------";
     generarTirada(tirada, TAM);
     mostrarTirada(tirada, TAM);
     int puntos = SumarTirada (tirada, TAM);
-    int PuntosAct = puntos;
+    PuntosAct = PuntosAct + puntos;
     cout << "La tirada sumo: " << puntos <<endl;
-    cout << "Su puntuacion actual es: " << PuntosAct << endl;
     PressEnter();
 
     ///2da tirada
-    cout << "Jugador: " << nombre <<endl;
-    cout << "" << endl;
+    cout << "TURNO DE " << nombre << "  | RONDA # 1  " << "| PUNTAJE TOTAL: " << PuntosAct << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------";
     generarTirada(tirada, TAM);
     mostrarTirada(tirada, TAM);
     puntos = SumarTirada (tirada, TAM);
     PuntosAct = PuntosAct + puntos;
     cout << "La tirada sumo: " << puntos <<endl;
-    cout << "Su puntuacion actual es: " << PuntosAct << endl;
     PressEnter();
 
     ///3ra tirada
-    cout << "Jugador: " << nombre <<endl;
-    cout << "" << endl;
+    cout << "TURNO DE " << nombre << "  | RONDA # 1  " << "| PUNTAJE TOTAL: " << PuntosAct << endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------";
     generarTirada(tirada, TAM);
     mostrarTirada(tirada, TAM);
     puntos = SumarTirada (tirada, TAM);
     PuntosAct = PuntosAct + puntos;
     cout << "La tirada sumo: " << puntos <<endl;
-    cout << "Su puntuacion actual es: " << PuntosAct << endl;
     PressEnter();
+    cout << " " <<endl;
+    cout << " " <<endl;
+    cout << "                                           LA PUNTUACION DE LA RONDA #1 es: " << PuntosAct << endl;
+    cout << " " <<endl;
+    cout << " " <<endl;
+    cout << "------------------------------------------------------------------------------------------------------------------------";
 
     return 0;
+    }
 }
 
