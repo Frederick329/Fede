@@ -1,16 +1,9 @@
 #include <iostream>
+#include<cstdlib>
 #include "funciones.h"
 
 using namespace std;
 
-
-void PressEnter()
-{
-    cout << "------------------------------------------------------------------------------------------------------------------------";
-    std::cout <<"Presione enter para la proxima tirada" <<endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------";
-    std::cin.get();
-}
 int tirarDado()
 {
     return rand()% 6 + 1;
@@ -84,7 +77,7 @@ void ordenarVector(int vec[], int tam)
         }
     }
 }
-
+/// Cuando todos los numeros son iguales, se suma la puntuacion de X*2, menos cuando es un sexteto, se resetean los puntos
 int contarNumerosRepetidos(int vec[], int tam, int num)
 {
     int cant = 0;
@@ -107,4 +100,11 @@ bool verificarTodosRepetidos(int vec[], int tam)
         return true;
     }
     return false;
+}
+
+void PressEnter()
+{
+
+    system("pause");
+    cout << "------------------------------------------------------------------------------------------------------------------------";
 }
