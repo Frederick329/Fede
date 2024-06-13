@@ -21,12 +21,12 @@ void mostrarTirada(int v[], int tam)
 {
     for (int i= 0; i < tam; i++)
     {
-        cout << "Dado #" << i+1 << " :" << v[i] << endl;
+        cout << "Dado #" << i+1 << ":" << v[i] << endl;
     }
 
 }
 
-int SumarTirada (int v[], int tam)
+int SumaDeDados (int v[], int tam)
 {
     int contador=0;
     for (int i = 0; i < tam; i++)
@@ -77,7 +77,7 @@ void ordenarVector(int vec[], int tam)
         }
     }
 }
-/// Cuando todos los numeros son iguales, se suma la puntuacion de X*2, menos cuando es un sexteto, se resetean los puntos
+/// SEXTETO
 int contarNumerosRepetidos(int vec[], int tam, int num)
 {
     int cant = 0;
@@ -90,7 +90,7 @@ int contarNumerosRepetidos(int vec[], int tam, int num)
     }
     return cant;
 }
-
+/// SEXTETO de 6
 bool verificarTodosRepetidos(int vec[], int tam)
 {
     int cantidadRepetidos;
@@ -101,6 +101,7 @@ bool verificarTodosRepetidos(int vec[], int tam)
     }
     return false;
 }
+
 
 void PressEnter()
 {
