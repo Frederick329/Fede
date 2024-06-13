@@ -6,11 +6,8 @@
 using namespace std;
 
 int main(){
+
     int jugador;
-    const int TAM = 6;
-    int tirada[TAM];
-    int ronda = 1;
-    int PuntosAct = 0;
     srand(time(0));
     cout << "------------------------------------------------------------------------------------------------------------------------";
     cout << "                                                CIEN O ESCALERA" << endl;
@@ -21,7 +18,13 @@ int main(){
     cout << "                                                   OPCION: ";
     cin >> jugador;
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
-    if (jugador == 1){
+
+
+    if (jugador==1){
+    const int TAM = 6;
+    int tirada[TAM];
+    int ronda = 1;
+    int PuntosAct = 0;
     string nombre;
     cout << "Ingrese su nombre de jugador: ";
     cin.ignore();
@@ -31,8 +34,8 @@ int main(){
     cout << "                                               COMIENZA LA RONDA #" << ronda <<endl;
     cout << "------------------------------------------------------------------------------------------------------------------------";
 
-    while (PuntosAct < 100){
-    for (int i = 1; i <=3; i++){
+    while (PuntosAct <= 100){
+    for (int i = 0; i < 3; i++){
     cout << "TURNO DE " << nombre << "     |    RONDA #" << ronda << "    |     PUNTAJE TOTAL: " << PuntosAct << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------";
     generarTirada(tirada, TAM);
@@ -41,6 +44,9 @@ int main(){
     PuntosAct = PuntosAct += puntos;
     cout << "LA TIRDADA SUMO: " << puntos << " PUNTOS" <<endl;
     PressEnter();
+    if (PuntosAct > 100){
+        i = 4;
+    }
     }
 
     if (PuntosAct < 100){
@@ -53,14 +59,12 @@ int main(){
     ronda++;
     }
     }
-    }
+
     cout << "                           FELICIDADES HA GANADO!!! =)" <<endl;
     cout << "                           SU PUNTUACION ES: " << PuntosAct <<endl;
-
+}
 
     return 0;
 
     }
-
-
 
