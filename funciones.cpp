@@ -1,5 +1,4 @@
 #include <iostream>
-#include<cstdlib>
 #include "funciones.h"
 
 using namespace std;
@@ -23,8 +22,10 @@ void mostrarTirada(int v[], int tam)
     {
         cout << "Dado #" << i+1 << ":" << v[i] << endl;
     }
-
+    cout << "------------------------------------------------------------------------------------------------------------------------";
 }
+
+
 
 int SumaDeDados (int v[], int tam)
 {
@@ -35,6 +36,30 @@ int SumaDeDados (int v[], int tam)
     }
 
     return contador;
+}
+
+int Sexteto (int v[], int tam, int num)
+{
+    int cant = 0;
+    for(int i = 0; i < tam; i++)
+    {
+        if(v[i] == num)
+        {
+            cant++;
+        }
+    }
+    return cant;
+}
+
+bool Sexteto0 (int v[], int tam)
+{
+    int cantidadRepetidos;
+    cantidadRepetidos = contarNumerosRepetidos(v, tam, v[0]);
+    if(cantidadRepetidos == tam)
+    {
+        return true;
+    }
+    return false;
 }
 
 bool compararVectoresEnMismaPosicion(int vec1[], int vec2[], int tam)
