@@ -7,7 +7,8 @@ void mostrarTirada(int v[], int tam);
 
 ///PUNTUACION
 int SumaDeDados (int v[], int tam);
-int Sexteto (int v[], int tam);
+int Sexteto (int v[], int tam, int num);
+bool Sexteto0 (int v[], int tam);
 int Escalera (int v[], int tam);
 
 ///GUIAS
@@ -20,9 +21,6 @@ bool verificarTodosRepetidos(int vec[], int tam);
 ///DISEÑO
 void PressEnter();
 
-///MENU
-bool MENU();
-void ModoUnJugador();
-void ModoDosJugadores();
 
 #endif // FUNCION_H_INCLUDED
+
