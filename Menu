@@ -2,6 +2,7 @@
 #include <ctime>
 #include<cstdlib>
 #include "funciones.cpp"
+#include "juego.cpp"
 
 using namespace std;
 
@@ -19,52 +20,12 @@ int main(){
     cin >> jugador;
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
 
-
     if (jugador==1){
-    const int TAM = 6;
-    int tirada[TAM];
-    int ronda = 1;
-    int PuntosAct = 0;
-    string nombre;
-    cout << "Ingrese su nombre de jugador: ";
-    cin.ignore();
-    getline(cin, nombre);
-    cout << " " <<endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------";
-    cout << "                                               COMIENZA LA RONDA #" << ronda <<endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------";
-
-    while (PuntosAct <= 100){
-    for (int i = 0; i < 3; i++){
-    cout << "TURNO DE " << nombre << "     |    RONDA #" << ronda << "    |     PUNTAJE TOTAL: " << PuntosAct << endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------";
-    generarTirada(tirada, TAM);
-    mostrarTirada(tirada, TAM);
-    int puntos = SumarTirada (tirada, TAM);
-    PuntosAct = PuntosAct += puntos;
-    cout << "LA TIRDADA SUMO: " << puntos << " PUNTOS" <<endl;
-    PressEnter();
-    if (PuntosAct > 100){
-        i = 4;
+        ModoUnJugador();
     }
-    }
+    else{
+        ModoDosJugadores();
 
-    if (PuntosAct < 100){
-    cout << " " <<endl;
-    cout << " " <<endl;
-    cout << "                                           LA PUNTUACION DE LA RONDA # " << ronda << " es: " << PuntosAct<< endl;
-    cout << " " <<endl;
-    cout << " " <<endl;
-    cout << "------------------------------------------------------------------------------------------------------------------------";
-    ronda++;
     }
-    }
-
-    cout << "                           FELICIDADES HA GANADO!!! =)" <<endl;
-    cout << "                           SU PUNTUACION ES: " << PuntosAct <<endl;
-}
-
     return 0;
-
     }
-
