@@ -8,7 +8,6 @@ using namespace std;
 
 void ModoUnJugador(int &PuntEst, string &nombEst)
 {
-
     int PuntosMax = 0;
     int PuntosProv = 0;
     const int TAM = 6;
@@ -36,35 +35,26 @@ void ModoUnJugador(int &PuntEst, string &nombEst)
     system("pause");
     system("cls");
 
-
     while (puntos <= 100)
     {
         PuntosMax = 0;
         primerJugada=true;
-
         for (int i = 0; i < 3; i++)
         {
-
             cout << "------------------------------------------------------------------------------------------------------------------------";
-            cout << "TURNO DE " << nombre << "     |     TIRADA # " << lanzamiento << "    |     PUNTAJE ACTUAL: " << puntos << endl;
+            cout << "TURNO DE " << nombre << "     |     RONDA #" << ronda << "   |   TIRADA # " << lanzamiento << "    |     PUNTAJE ACTUAL: " << puntos << endl;
             cout << "------------------------------------------------------------------------------------------------------------------------";
-
             generarTirada(tirada, TAM);
-            mostrarTirada(tirada, TAM);
+            DibujaDados(tirada, 3, 5);
+            cout << "" <<endl;
+            cout << "" <<endl;
+            cout << "" <<endl;
             ordenarVector(tirada, TAM);
             Escalera (tirada, TAM);
             Sexteto(tirada, TAM);
             SextetodeX(tirada, TAM);
             if (Escalera(tirada, TAM) == true)
             {
-
-                {
-                    DibujaDados(tirada, 3, 18);
-                    rlutil::anykey();
-                    system("cls");
-                }
-                puntos = 100;
-                rlutil::anykey();
                 system("cls");
                 cout << "------------------------------------------------------------------------------------------------------------------------";
                 cout << "" <<endl;
@@ -80,54 +70,29 @@ void ModoUnJugador(int &PuntEst, string &nombEst)
                 PuntosProv = 0;
                 cout << "SEXTETO DE SEIS! SE REINICIA EL PUNTAJE!"<<endl;
                 cout << "LA TIRADA SUMA: " << PuntosProv << " PUNTOS" <<endl;
-
                 cout << "MAXIMO PUNTAJE DE LA RONDA: " << PuntosMax << endl;
                 cout << "PUNTAJE DE ESTA TIRADA: " << PuntosProv << endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------"<<endl;
-                {
-                    DibujaDados(tirada, 3, 18);
-
-                    rlutil::anykey();
-                    system("cls");
-
-                }
                 system("pause");
             }
             if (SextetodeX(tirada, TAM) == true)
             {
                 PuntosProv = tirada[0] * 10;
-
                 cout << "SEXTETO DE " << tirada[0] << " =D!!!" <<endl;
                 cout << "LA TIRADA SUMA: " << PuntosProv << " PUNTOS" <<endl;
-
                 cout << "MAXIMO PUNTAJE DE LA RONDA: " << PuntosMax << endl;
                 cout << "PUNTAJE DE ESTA TIRADA: " << PuntosProv << endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------"<<endl;
-                {
-                    DibujaDados(tirada, 3, 18);
-
-                    rlutil::anykey();
-                    system("cls");
-
-                }
                 system("pause");
             }
             if (SextetodeX(tirada, TAM) == false && Sexteto(tirada, TAM) == false)
             {
                 PuntosProv = SumaDeDados (tirada, TAM);
-
+                cout << "SUMA DE DADOS!" <<endl;
                 cout << "LA TIRADA SUMA: " << PuntosProv << " PUNTOS" <<endl;
-
                 cout << "MAXIMO PUNTAJE DE LA RONDA: " << PuntosMax << endl;
                 cout << "PUNTAJE DE ESTA TIRADA: " << PuntosProv << endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------"<<endl;
-                {
-                    DibujaDados(tirada, 3, 18);
-
-                    rlutil::anykey();
-                    system("cls");
-
-                }
             }
             if (primerJugada == true)
             {
@@ -138,15 +103,15 @@ void ModoUnJugador(int &PuntEst, string &nombEst)
             {
                 PuntosMax = PuntosProv;
             }
-            if (puntos > 100)
+            if (puntos >= 100)
             {
-                /*rlutil::anykey();*/
+                break;
             }
             lanzamiento++;
-
+            system("pause");
+            system("cls");
         }
         puntos += PuntosMax;
-
         lanzamiento = 1;
         system("cls");
         if (puntos < 100)
@@ -176,7 +141,6 @@ void ModoUnJugador(int &PuntEst, string &nombEst)
         {
             PuntEst = puntos;
             nombEst = nombre;
-
         }
 
     }
@@ -189,12 +153,7 @@ void ModoUnJugador(int &PuntEst, string &nombEst)
     cout << " " <<endl;
     cout << "------------------------------------------------------------------------------------------------------------------------";
     system("pause");
-
-
-
 }
-
-
 
 void ModoDosJugadores(int &PuntEst, string &nombEst)
 {
@@ -234,52 +193,31 @@ void ModoDosJugadores(int &PuntEst, string &nombEst)
     system("cls");
     while ( puntos1 < 100 || puntos2 < 100)
     {
-        PuntosMax1 = 0;
         primerJugada=true;
         for (int i = 0; i < 3; i++)
         {
             cout << "------------------------------------------------------------------------------------------------------------------------";
-            cout << "TURNO DE " << nombre1 << "     |    LANZAMIENTO # " << lanzamiento << "    |     PUNTAJE ACTUAL: " << puntos1 << endl;
+            cout << "TURNO DE " << nombre1 << "     |     RONDA #" << ronda << "   |   TIRADA # " << lanzamiento << "    |     PUNTAJE ACTUAL: " << puntos1 << endl;
             cout << "------------------------------------------------------------------------------------------------------------------------";
             generarTirada(tirada, TAM);
-            mostrarTirada(tirada, TAM);
+            DibujaDados(tirada, 3, 5);
+            cout << "" <<endl;
+            cout << "" <<endl;
+            cout << "" <<endl;
             ordenarVector(tirada, TAM);
             Escalera (tirada, TAM);
-            SumaDeDados (tirada,TAM);
             Sexteto(tirada, TAM);
             SextetodeX(tirada, TAM);
             if (Escalera(tirada, TAM) == true)
             {
-                {
-                    DibujaDados(tirada, 3, 18);
-                    rlutil::anykey();
-                    system("cls");
-                }
-                puntos1 = 100;
-                system("pause");
                 system("cls");
                 cout << "------------------------------------------------------------------------------------------------------------------------";
                 cout << "" <<endl;
                 cout << "                                                    ESCALERA GANASTE!" << endl;
-                cout << "                                                       FELICIDAES " << nombre1 <<endl;
                 cout << "" <<endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------";
                 system("pause");
                 menu();
-            }
-            if (SextetodeX(tirada, TAM) == true)
-            {
-                PuntosProv1 = tirada[0] * 10;
-                cout << "LA TIRADA SUMA: " << PuntosProv1 << " PUNTOS" <<endl;
-                cout << "MAXIMO PUNTAJE DE LA RONDA: " << PuntosMax1 << endl;
-                cout << "PUNTAJE DE ESTA TIRADA: " << PuntosProv1 << endl;
-                cout << "------------------------------------------------------------------------------------------------------------------------"<<endl;
-                {
-                    DibujaDados(tirada, 3, 18);
-                    rlutil::anykey();
-                    system("cls");
-                }
-
             }
             if (Sexteto(tirada, TAM) == true)
             {
@@ -290,43 +228,43 @@ void ModoDosJugadores(int &PuntEst, string &nombEst)
                 cout << "MAXIMO PUNTAJE DE LA RONDA: " << PuntosMax1 << endl;
                 cout << "PUNTAJE DE ESTA TIRADA: " << PuntosProv1 << endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------"<<endl;
-                {
-                    DibujaDados(tirada, 3, 18);
-                    rlutil::anykey();
-                    system("cls");
-                }
+                system("pause");
             }
-            if (SextetodeX(tirada, TAM) == false && Sexteto(tirada, TAM) == false)
+            if (SextetodeX(tirada, TAM) == true)
             {
-                PuntosProv1 = SumaDeDados (tirada, TAM);
+                PuntosProv1 = tirada[0] * 10;
+                cout << "SEXTETO DE " << tirada[0] << " =D!!!" <<endl;
                 cout << "LA TIRADA SUMA: " << PuntosProv1 << " PUNTOS" <<endl;
                 cout << "MAXIMO PUNTAJE DE LA RONDA: " << PuntosMax1 << endl;
                 cout << "PUNTAJE DE ESTA TIRADA: " << PuntosProv1 << endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------"<<endl;
-                {
-                    DibujaDados(tirada, 3, 18);
-                    rlutil::anykey();
-                    system("cls");
-                }
+                system("pause");
+            }
+            if (SextetodeX(tirada, TAM) == false && Sexteto(tirada, TAM) == false)
+            {
+                PuntosProv1 = SumaDeDados (tirada, TAM);
+                cout << "SUMA DE DADOS!" <<endl;
+                cout << "LA TIRADA SUMA: " << PuntosProv1 << " PUNTOS" <<endl;
+                cout << "MAXIMO PUNTAJE DE LA RONDA: " << PuntosMax1 << endl;
+                cout << "PUNTAJE DE ESTA TIRADA: " << PuntosProv1 << endl;
+                cout << "------------------------------------------------------------------------------------------------------------------------"<<endl;
             }
             if (primerJugada == true)
             {
                 PuntosMax1 = PuntosProv1;
                 primerJugada = false;
             }
-            else if (PuntosMax1 < PuntosProv2)
+            else if (PuntosMax1 < PuntosProv1)
             {
                 PuntosMax1 = PuntosProv1;
             }
-
-            if (puntos1 > 100 )
+            if (puntos1 >= 100)
             {
-                system("cls");
-                cout << " PUNTAJE DE " << nombre1 << "es: " << puntos1 << "EN LA TIRADA # " << lanzamiento << endl;
-                system("pause");
                 break;
             }
             lanzamiento++;
+            system("pause");
+            system("cls");
         }
         puntos1 += PuntosMax1;
 
@@ -346,48 +284,31 @@ void ModoDosJugadores(int &PuntEst, string &nombEst)
             system("pause");
             system("cls");
         }
-        PuntosMax2 = 0;
         primerJugada=true;
         for (int i = 0; i < 3; i++)
         {
-
-
             cout << "------------------------------------------------------------------------------------------------------------------------";
-            cout << "TURNO DE " << nombre2 << "     |    LANZAMIENTO # " << lanzamiento << "    |     PUNTAJE ACTUAL: " << puntos2 << endl;
+            cout << "TURNO DE " << nombre2 << "     |     RONDA #" << ronda << "   |   TIRADA # " << lanzamiento << "    |     PUNTAJE ACTUAL: " << puntos2 << endl;
             cout << "------------------------------------------------------------------------------------------------------------------------";
             generarTirada(tirada, TAM);
-            mostrarTirada(tirada, TAM);
+            DibujaDados(tirada, 3, 5);
+            cout << "" <<endl;
+            cout << "" <<endl;
+            cout << "" <<endl;
             ordenarVector(tirada, TAM);
             Escalera (tirada, TAM);
-            SumaDeDados (tirada,TAM);
             Sexteto(tirada, TAM);
             SextetodeX(tirada, TAM);
             if (Escalera(tirada, TAM) == true)
             {
-                puntos2 = 100;
                 system("cls");
                 cout << "------------------------------------------------------------------------------------------------------------------------";
                 cout << "" <<endl;
                 cout << "                                                    ESCALERA GANASTE!" << endl;
-                cout << "                                                       FELICIDAES" << nombre2 <<endl;
                 cout << "" <<endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------";
                 system("pause");
                 menu();
-            }
-            if (SextetodeX(tirada, TAM) == true)
-            {
-                PuntosProv2 = tirada[0] * 10;
-                cout << "SEXTETO DE " << tirada[0] << " =D!!!" <<endl;
-                cout << "LA TIRADA SUMA: " << PuntosProv2 << " PUNTOS" <<endl;
-                cout << "MAXIMO PUNTAJE DE LA RONDA: " << PuntosMax2 << endl;
-                cout << "PUNTAJE DE ESTA TIRADA: " << PuntosProv2 << endl;
-                cout << "------------------------------------------------------------------------------------------------------------------------"<<endl;
-                {
-                    DibujaDados(tirada, 3, 18);
-                    rlutil::anykey();
-                    system("cls");
-                }
             }
             if (Sexteto(tirada, TAM) == true)
             {
@@ -398,24 +319,26 @@ void ModoDosJugadores(int &PuntEst, string &nombEst)
                 cout << "MAXIMO PUNTAJE DE LA RONDA: " << PuntosMax2 << endl;
                 cout << "PUNTAJE DE ESTA TIRADA: " << PuntosProv2 << endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------"<<endl;
-                {
-                    DibujaDados(tirada, 3, 18);
-                    rlutil::anykey();
-                    system("cls");
-                }
+                system("pause");
+            }
+            if (SextetodeX(tirada, TAM) == true)
+            {
+                PuntosProv2 = tirada[0] * 10;
+                cout << "SEXTETO DE " << tirada[0] << " =D!!!" <<endl;
+                cout << "LA TIRADA SUMA: " << PuntosProv2 << " PUNTOS" <<endl;
+                cout << "MAXIMO PUNTAJE DE LA RONDA: " << PuntosMax2 << endl;
+                cout << "PUNTAJE DE ESTA TIRADA: " << PuntosProv2 << endl;
+                cout << "------------------------------------------------------------------------------------------------------------------------"<<endl;
+                system("pause");
             }
             if (SextetodeX(tirada, TAM) == false && Sexteto(tirada, TAM) == false)
             {
                 PuntosProv2 = SumaDeDados (tirada, TAM);
+                cout << "SUMA DE DADOS!" <<endl;
                 cout << "LA TIRADA SUMA: " << PuntosProv2 << " PUNTOS" <<endl;
-                  cout << "MAXIMO PUNTAJE DE LA RONDA: " << PuntosMax2 << endl;
+                cout << "MAXIMO PUNTAJE DE LA RONDA: " << PuntosMax2 << endl;
                 cout << "PUNTAJE DE ESTA TIRADA: " << PuntosProv2 << endl;
                 cout << "------------------------------------------------------------------------------------------------------------------------"<<endl;
-                {
-                    DibujaDados(tirada, 3, 18);
-                    rlutil::anykey();
-                    system("cls");
-                }
             }
             if (primerJugada == true)
             {
@@ -426,15 +349,13 @@ void ModoDosJugadores(int &PuntEst, string &nombEst)
             {
                 PuntosMax2 = PuntosProv2;
             }
-            if (puntos2 > 100 )
+            if (puntos2 >= 100)
             {
-
-                system("cls");
-                cout << " PUNTAJE DE " << nombre2 << "es: " << puntos2 << "EN EL LANZAMIENTO # " << lanzamiento << endl;
-                system("pause");
                 break;
             }
             lanzamiento++;
+            system("pause");
+            system("cls");
         }
         puntos2 += PuntosMax2;
 
